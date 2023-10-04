@@ -1,4 +1,4 @@
-class Solution {
+class Solution2 {
     public int finalValueAfterOperations(String[] operations) {
         int value = 0;
         for(String s : operations)
