@@ -1,0 +1,49 @@
+Sanya and Tanya
+
+Problem Statement: 
+
+Sanya and Tanya, twin sisters were playing a game where one person guesses a string 'str1' and the other guesses another string 'str2' of the same length to see how they both differ from
+each other mentally, since they are both so similar physically.
+After they played this game a few times Tanya proposed they try to see how easily their strings can be converted to one another, so they took a integer called maxCost and decided that the 
+cost of transforming the ith character of 'str1' to the ith character of 'str2' is equal to the absolute value of their difference in ascii values.
+
+Your task is to help them in playing their game by telling them the maximum length of a substring that can be converted from 'str1' to 'str2' with the total cost of their transformations
+less than or equal to maxCost. If you can't find any possible transformation just tell them the length is 0.
+
+Solution : 
+
+import java.io.*;
+import java.util.*;
+
+
+        public class Solution{
+       
+       public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            String str1 = sc.next();
+            String str2 = sc.next();
+            int maxCost = sc.nextInt();
+            int n = str1.length();
+            int[] diff = new int[n];
+            for (int i = 0; i < n; i++) {
+                diff[i] = Math.abs(str1.charAt(i) - str2.charAt(i));
+            }
+            int l = 0, r = 0, cost = 0, ans = 0;
+            while (r < n) {
+                cost += diff[r];
+                while (cost > maxCost) {
+                    cost -= diff[l];
+                    l++;
+                }
+                ans = Math.max(ans, r - l + 1);
+                r++;
+            }
+            System.out.println(ans);
+        }
+    }
+}
+
+
+
