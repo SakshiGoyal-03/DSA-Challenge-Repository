@@ -1,0 +1,18 @@
+class Solution
+{
+    public:
+    string reverseWord(string str)
+    {
+       int s = 0;
+       int e = str.length()-1;
+       while(s<=e)
+       {
+           char temp = str.at(s);
+           str.at(s) = str.at(e);
+           str.at(e) = temp;
+           s++;
+           e--;
+       }
+       return str;
+    }
+};
