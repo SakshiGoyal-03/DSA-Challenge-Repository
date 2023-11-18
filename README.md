@@ -1,2 +1,2 @@
 # PracticeDSA
-DSA practice questions on leetcode in Java and C++
+DSA practice questions on Leetcode & GeeksForGeeks in Java and C++
