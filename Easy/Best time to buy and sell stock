@@ -1,0 +1,23 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int ProfitSoFar = Integer.MAX_VALUE;
+        int curProfit = 0;
+        int overAllProfit =0;
+        for(int i=0;i<prices.length;i++)
+        {
+            if(prices[i]<ProfitSoFar)
+            {
+                ProfitSoFar = prices[i];
+            }
+            curProfit =  prices[i]-ProfitSoFar;
+            if(overAllProfit < curProfit)
+            {
+                overAllProfit = curProfit;
+            }
+
+        }
+        return overAllProfit;
+
+        
+    }
+}
