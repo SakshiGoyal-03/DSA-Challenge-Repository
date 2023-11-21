@@ -1,0 +1,19 @@
+class Solution {
+    String removeDuplicates(String str) {
+       Set<Character> s = new HashSet<>();
+       String temp = "";
+       for(int i=0;i<str.length();i++)
+       {
+           s.add(str.charAt(i));
+       }
+       for(int i =0;i<str.length();i++)
+       {
+           if(s.contains(str.charAt(i)))
+           {
+               s.remove(str.charAt(i));
+               temp+=str.charAt(i);
+           }
+       }
+       return temp;
+    }
+}
