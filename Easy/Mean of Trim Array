@@ -1,0 +1,15 @@
+class Solution {
+    public double trimMean(int[] arr) {
+
+        Arrays.sort(arr);
+        int trim = (5*arr.length)/100;
+
+        double sum = 0;
+        for(int i=trim;i<arr.length-trim;i++){
+            sum+=arr[i];
+        }
+        int length = arr.length - 2*trim;
+        return sum/length;
+        
+    }
+}
